@@ -10,6 +10,7 @@ const elementDiff = (arr) => {
         }
     })
 
+    // console.log(arrFinal);
     return arrFinal;
 }
 
@@ -33,16 +34,16 @@ const numsDifMenosUno = (arr) => {
         })
 
         arrFinal.push(arrAux)
-
+        
     })
-
+    
     return arrFinal;
 }
 
 
-const compararArrays = () => {
+const compararArrays = (a2) => {
     
-    const arrays = numsDifMenosUno(arrHR);
+    const arrays = numsDifMenosUno(a2);
 
     for(let i = 0; i < arrays.length; i++) {
         for(let j = 0; j < arrays.length; j++) {
@@ -65,31 +66,32 @@ const compararArrays = () => {
             }
         }
     }
+    console.log(objContador);
 
     return objContador;
 }
 
-const hallarMayor = () => {
+const hallarMayor = (arrr) => {
 
-    const objNumeros = compararArrays();
+    const objNumeros = compararArrays(arrr);
 
     const keys = Object.keys(objNumeros);
 
     let numMayor = 0;
-    let keyMayor = "";
-
+    // let keyMayor = "";
+    
     keys.forEach( num => {
         
         if(objNumeros[num] > numMayor) {
-            keyMayor = num;
+            // keyMayor = num;
             numMayor = objNumeros[num];
         }
         
     })
 
-    return parseInt(keyMayor);
+    return parseInt(numMayor);
     
 }
 
-console.log(hallarMayor());
+console.log(hallarMayor(arrHR));
 
